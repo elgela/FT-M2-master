@@ -6,10 +6,10 @@ let toDoItems = [];
 // Usando querySelector seleccionar dicho span por su id ('createdBy') y luego usando innerHTML
 // agregar tu nombre al final del texto actual. Ej: 'Aplicación creada por Franco'
 // Tu código acá:
-var nombre = ' Marcelo Gelato';
+var nombre = 'Marcelo Gelato';
 var span = document.querySelector('#createdBy');// queda guardado en una variable lo que está escrito en <span></span> // o se puede poner directo, sin declararlo en la variable
 // document.querySelector('#createdBy').innerHTML + nombre;
-span.innerHTML = span.innerHTML + nombre; // al tener el punto (dot.notation) es un objeto representando al tag <span>
+span.innerHTML = span.innerHTML + ' \'' + nombre + '\''; // al tener el punto (dot.notation) es un objeto representando al tag <span>
 
 
 // Crear una clase denominada 'ToDo' cuyo constructor debe recibir un único parámetro del tipo string
