@@ -6,8 +6,9 @@ let toDoItems = [];
 // Usando querySelector seleccionar dicho span por su id ('createdBy') y luego usando innerHTML
 // agregar tu nombre al final del texto actual. Ej: 'Aplicación creada por Franco'
 // Tu código acá:
-var nombre = ' Marcelo';
-var span = document.querySelector('#createdBy');// queda guardado en una variable lo que está escrito en <span></span>
+var nombre = ' Marcelo Gelato';
+var span = document.querySelector('#createdBy');// queda guardado en una variable lo que está escrito en <span></span> // o se puede poner directo, sin declararlo en la variable
+// document.querySelector('#createdBy').innerHTML + nombre;
 span.innerHTML = span.innerHTML + nombre; // al tener el punto (dot.notation) es un objeto representando al tag <span>
 
 
@@ -88,7 +89,7 @@ function buildToDos(toDos) {
 //  1) Seleccionr el elemento cuyo id es 'toDoContainer' y almacenarlo en una variable denominada 'toDoContainer'
 //  2) Setear el innerHTML de 'toDoContainer' como un string vacio ("")
 //  3) Llamar a la función previemante creada 'buildToDos' pasándole como argumento el array toDoItems
-//  4) Iterar sobre el resultado devuelto por la función 'buildToDos' e ir agregndo cada elemento a 'toDoContainer'
+//  4) Iterar sobre el resultado devuelto por la función 'buildToDos' e ir agregando cada elemento a 'toDoContainer'
 //  5) Al final de este archivo, antes de la línea que dice "NO CAMBIES NADA DE ACÁ PARA ABAJO" escribe una
 //     línea para hacer el llamado a esta funcion (displayToDos)
 //  6) Abrir o en el caso de ya tenerlo abierto, recargar, la página
