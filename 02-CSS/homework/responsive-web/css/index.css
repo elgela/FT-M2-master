@@ -190,6 +190,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: large;
 }
 .home .intro img {
   border-radius: 20px;
