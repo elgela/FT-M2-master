@@ -11,7 +11,7 @@ var traverseDomAndCollectElements = function(matchFunc, startEl) {
   // TU CÓDIGO AQUÍ
   if(matchFunc(startEl)) resultSet.push(startEl);
   for (let i = 0; i < startEl.children.length; i++) {
-    let child = startEl.children[0];
+    let child = startEl.children[i];
     let result = traverseDomAndCollectElements(matchFunc, child);
     resultSet = [...resultSet, ...result];
   }
@@ -82,3 +82,7 @@ var $ = function(selector) {
   elements = traverseDomAndCollectElements(selectorMatchFunc);
   return elements;
 };
+
+selectorTypeMatcher('#uno');
+matchFunctionMaker('uno');
+$('uno');
