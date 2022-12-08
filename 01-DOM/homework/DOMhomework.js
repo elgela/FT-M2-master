@@ -64,10 +64,10 @@ let toDoText = document.createElement('span');
 //paso 4
 toDoText.innerHTML = todo.description;
 //paso 5
-toDoText.setAttribute('id', index);
+toDoText.setAttribute('id', index);//o si no: toDoText.id = index
 //paso 6
 if(todo.complete){
-  toDoText.setAttribute('class', 'completeText');
+  toDoText.setAttribute('class', 'completeText');//o si no: todo.complete && (toDoText.className = 'completeText')
 }
 toDoShell.appendChild(toDoText);
 toDoText.addEventListener('click', completeToDo);
@@ -81,7 +81,10 @@ return toDoShell;
 
 function buildToDos(toDos) {
   // Tu código acá:
-  let newArray = toDos.map(buildToDo);
+// let newArr = toDos.map(function(todo, index){        // Así
+// return buildToDo(todo, index)
+// });
+  let newArray = toDos.map(buildToDo);            // o así
   return newArray;
 }
 
@@ -132,6 +135,12 @@ function addToDo() {
 
 // Tu código acá:
 document.getElementById('addButton').addEventListener('click', addToDo);
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Enter'){
+    addToDo();
+  }
+})
+
 
 // La función completeToDo se va a ejecutar cuando queramos completar un todo
 // [NOTA: Algunas cuestiones a tener en cuenta
