@@ -78,11 +78,11 @@ var matchFunctionMaker = function(selector) {
 
 var $ = function(selector) {
   var elements;
-  var selectorMatchFunc = matchFunctionMaker(selector);
+  var selectorMatchFunc = matchFunctionMaker(selector);// funcion que recibe un elemento y recibe T o F
   elements = traverseDomAndCollectElements(selectorMatchFunc);
   return elements;
 };
 
-selectorTypeMatcher('#uno');
-matchFunctionMaker('uno');
-$('uno');
+// selectorTypeMatcher('#uno');
+// matchFunctionMaker('uno');
+// $('uno');
