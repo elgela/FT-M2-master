@@ -1,3 +1,5 @@
+// Ver Lista
+
 function getFriends(){
     let lista = document.getElementById('lista');
     lista.innerHTML = '';
@@ -18,16 +20,33 @@ function getFriends(){
     })
 }
 
-function search(){
-    let lista = document.getElementById('lista');
-    let input = getElementById('input');
-    for (let i = 0; i < input.length; i++) {
-        if(input[i]){
-            return lista.amigo.name;
-        }
+// Buscar
+
+function searchFriend(){
+    let id = document.getElementById('input').value;
+    fetch(`http://localhost:5000/amigos/${id}`)
+    .then(data => data.json())
+    .then(data => {
+        document.getElementById('amigo').textContent = data.name;
+    })
+    document.getElementById('input').value = '';
+    if(document.getElementById('input').value > 5){
+        alert('No existe');
     }
 }
 
+//Borrar
+
+function deleteFriend(){
+    let id = document.getElementById('input').value;
+    fetch(`http://localhost:5000/amigos/${id}`)
+    .then(data => data.json())
+    .then(data => {
+        document.getElementById('amigo')
+    })
+}
 
 document.getElementById('boton').addEventListener('click', getFriends);
-document.getElementById('search').addEventListener('click', search);
+document.getElementById('search').addEventListener('click', searchFriend);
+document.getElementById('delete').addEventListener('click', deleteFriend)
+
