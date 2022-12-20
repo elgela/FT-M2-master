@@ -8,7 +8,7 @@ import data, { Cairns } from './data.js';
 function App() {
   return (
     <div className="App">
-      {/* <div>
+      <div>
         <Card
           max={Cairns.main.temp_max}
           min={Cairns.main.temp_min}
@@ -16,7 +16,7 @@ function App() {
           img={Cairns.weather[0].icon}
           onClose={() => alert('que mirá bobo, andá pa`lla bobo')}
         />
-      </div> */}
+      </div>
       <hr />
       <div>
         <Cards

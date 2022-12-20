@@ -11,6 +11,7 @@ export default function Card({max, min, name, img, onClose}) {
     <h5>Max</h5>
     <div>{max}</div>
     <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt=''/>
+    <hr/>
   </>
   )
 };
