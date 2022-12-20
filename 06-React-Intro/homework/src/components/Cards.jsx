@@ -1,7 +1,12 @@
 import React from 'react';
+import Card from './Card';
 
-export default function Cards(props) {
+export default function Cards({data}) {
   // acá va tu código
   // tip, podés usar un map
-  return <div>Cards Component</div>
+  return (
+  data.map(ciudad =>
+    <Card />
+    )
+  )
 };

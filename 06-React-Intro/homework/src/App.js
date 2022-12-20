@@ -14,7 +14,7 @@ function App() {
           min={Cairns.main.temp_min}
           name={Cairns.name}
           img={Cairns.weather[0].icon}
-          onClose={() => alert(Cairns.name)}
+          onClose={() => alert('que mirá bobo, andá pa`lla bobo')}
         />
       </div>
       <hr />
