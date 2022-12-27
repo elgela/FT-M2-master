@@ -26,10 +26,12 @@ var selectorTypeMatcher = function(selector) {
   // tu código aquí
   if(selector[0] === '#') return 'id';
   if(selector[0] === '.') return 'class';
-  if(selector.split('.').length === 2) return 'tag.class';
-  else{
-    return 'tag';
+  // if(selector.split('.').length === 2) return 'tag.class';
+          // o si no con un 'for'
+  for (let i = 0; i < selector.length; i++) {
+      if(selector[i] === '.') return 'tag.class';
   }
+    return 'tag';
 };
 
 // NOTA SOBRE LA FUNCIÓN MATCH
