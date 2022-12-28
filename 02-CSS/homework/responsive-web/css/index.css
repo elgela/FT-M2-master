@@ -178,6 +178,10 @@ p {
   padding: 10px;
   font-weight: bold;
 }
+.navbar .menu:hover {
+  background-color: violet;
+border-radius: 10px;  
+}
 .intro img {
   border-radius: 25px;
 }
