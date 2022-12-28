@@ -85,6 +85,9 @@ var $ = function(selector) {
   return elements;
 };
 
-// selectorTypeMatcher('#uno');
-// matchFunctionMaker('uno');
-// $('uno');
+var extraCredit = function(selector) {
+  if(selector('>')){
+    return selector;
+  }
+ 
+}
