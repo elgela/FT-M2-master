@@ -18,7 +18,7 @@ export default function Bienvenido() {
             {skill}
           </li>)}
       </ul>
-      <Botones />
+      <Botones alerts={alerts}/>
     </div>
   );
 }
