@@ -7,7 +7,7 @@ import reactImg from '../../assets/react.png'
 import redux from '../../assets/redux.png'
 import styles from './Bienvenido.module.css'
 
-const studentName = 'Nombre alumno'
+const studentName = 'Marcelo'
 const techSkills = [{ tech: 'Html', image: htmlImg }, { tech: 'Css', image: cssImg }, { tech: 'JavaScript', image: javascriptImg }, { tech: 'React', image: reactImg }, { tech: 'Redux', image: redux }]
 const alerts = { m1: 'Aprobado', m2: 'En curso' }
 
