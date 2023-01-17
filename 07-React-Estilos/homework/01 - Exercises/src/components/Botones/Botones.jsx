@@ -8,7 +8,7 @@ const DivButtons = styled.div`
   align-items: center;
 ` 
 
-const Buttons = styled.div`
+const Buttons = styled.button`
   border-radius: 5px;
   margin: 10px;
   padding: 5px;
@@ -19,10 +19,9 @@ export default class Botones extends React.Component {
     const { alerts } = this.props
     return (
       <DivButtons>
-        <button onClick={() => window.alert(alerts.m1)}>Módulo 1</button>
+        <Buttons onClick={() => window.alert(alerts.m1)}>Módulo 1</Buttons>
         &nbsp;
-        &nbsp;
-        <button onClick={() => window.alert(alerts.m2)}>Módulo 2</button>
+        <Buttons onClick={() => window.alert(alerts.m2)}>Módulo 2</Buttons>
       </DivButtons>
     )
   }
