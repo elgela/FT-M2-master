@@ -11,7 +11,7 @@ var span = document.querySelector('#createdBy');// queda guardado en una variabl
 // document.querySelector('#createdBy').innerHTML + nombre;
 span.innerHTML = span.innerHTML + ' \'' + nombre + '\''; // al tener el punto (dot.notation) es un objeto representando al tag <span>
 
-
+ 
 // Crear una clase denominada 'ToDo' cuyo constructor debe recibir un único parámetro del tipo string
 // con el nombre 'description' que será justamente la descripción del ToDo.
 // Agregar dos propiedades a la clase:
@@ -56,21 +56,24 @@ ToDo.prototype.completeToDo = function() {
 function buildToDo(todo, index) {
   // Tu código acá:
   //paso 1
-let toDoShell = document.createElement('div');
+let toDoShell = document.createElement('div'); // createElement crea el elemento, entre préntesis se dice de que estilo
 //paso 2
-toDoShell.setAttribute('class', 'toDoShell');
+toDoShell.setAttribute('class', 'toDoShell'); // con setAttribute se asigna la clase (entre paréntesis lleva 2 argumentos. El primero es el tipo de atributo y el otro es el nombre del atributo en cuestión)
 //paso 3
-let toDoText = document.createElement('span');
+let toDoText = document.createElement('span'); // se crea el elemento span y se asigna a la variable
 //paso 4
 toDoText.innerHTML = todo.description;
 //paso 5
-toDoText.setAttribute('id', index);//o si no: toDoText.id = index
+toDoText.setAttribute('id', index);// index no va entre comillas porque es el valor recibido en el argumento, si fuera entre comillas saldría como palabra no el valor
 //paso 6
 if(todo.complete){
-  toDoText.setAttribute('class', 'completeText');//o si no: todo.complete && (toDoText.className = 'completeText')
+  toDoText.setAttribute('class', 'completeText'); //si es true hace asigna la clase, si es false no hace nada
 }
-toDoShell.appendChild(toDoText);
+//paso 7
+toDoShell.appendChild(toDoText);// appendChild agrega hijos a un elemento
+//paso 3 de completeToDo()
 toDoText.addEventListener('click', completeToDo);
+//paso 8
 return toDoShell;
 }
 
@@ -100,9 +103,13 @@ function buildToDos(toDos) {
 
 function displayToDos() {
   // Tu código acá:
-let toDoContainer = document.getElementById('toDoContainer');
+//paso 1
+let toDoContainer = document.getElementById('toDoContainer');//con querySelector('#toDoContainer') traería la primera clase con ese ID que encuentra
+//paso 2
 toDoContainer.innerHTML = '';
-let result = buildToDos(toDoItems);
+//paso 3
+let result = buildToDos(toDoItems);//se guarda en una variable(result) para después usarla
+//paso 4
 result.forEach(elem => {
   toDoContainer.appendChild(elem);
 });
@@ -112,8 +119,7 @@ result.forEach(elem => {
 
 // La función 'addToDo' agregará un nuevo ToDo al array 'toDoItems'
 // [NOTA: Algunas cuestiones a tener en cuenta sobre el elemento 'input' de HTML (Ya que 'toDoInput' es un input)
-// Todos los elementos input tienen una propiedad llamada 'value' que nos permite acceder al texto que se encuentre
-// actualmente escrito dentro del input]
+// Todos los elementos input tienen una propiedad llamada 'value' que nos permite acceder al texto que se encuentre actualmente escrito dentro del input]
 //  1) Crear un nuevo ToDo usando la clase ToDo y pasándole el valor del input 'toDoInput' como parámetro
 //  2) Agregar el objeto ToDo recién creado al array toDoItems
 //  3) Setear el valor del input toDoInput como un string vacio ("") (Esto se realiza para que en la vista se borre lo que se encontraba escrito)
@@ -121,10 +127,14 @@ result.forEach(elem => {
 
 function addToDo() {
   // Tu código acá:
-  let toDoInput = document.getElementById('toDoInput').value;
-  let newToDo = new ToDo(toDoInput);
+  //paso 1
+  let input = document.getElementById('toDoInput').value;
+  let newToDo = new ToDo(input);
+  //paso 2
   toDoItems.push(newToDo);
+  //paso 3
   document.getElementById('toDoInput').value = '';
+  //paso 4
   displayToDos();
 }
 
@@ -148,8 +158,7 @@ document.addEventListener('keydown', function(e){
 // el tipo del evento, que elemento fue el que lo llamó, los valores de dicho elemento, etc.
 // En este paso vamos a utilizarlo para encontrar el index del item que disparó el evento (Esta parte ya se
 // encuentra desarrollada pero está comentada dentro de la función por lo que va a ser necesario que la descomenten)]
-//   1) Utilizando el index suministrdo, llamar a 'completeToDo' (Recuerden que habíamos creado dcho método en el
-//      prototipo de la clase ToDo) sobre el elemento correspondiente del array toDoItems
+//   1) Utilizando el index suministrdo, llamar a 'completeToDo' (Recuerden que habíamos creado dicho método en el prototipo de la clase ToDo) sobre el elemento correspondiente del array toDoItems
 //   2) Llamar a displayToDos para actualizar los elementos que se van a mostrar en pantalla
 //   3) En la función 'buildToDo' agregar un 'click' event listener al elemento 'toDoText', pasándole
 //      esta función como callback
@@ -158,7 +167,9 @@ function completeToDo(event) {
   // DESCOMENTAR LA SIGUIENTE LINEA
   const index = event.target.id;
   // Tu código acá:
+  //paso 1
   toDoItems[index].completeToDo();
+  //paso 2
   displayToDos();
 }
 
@@ -168,7 +179,7 @@ function completeToDo(event) {
 // **********************************************EXTRA CREDITOS:********************************************** //
 
 /*    Investigá sobre el tipo 'checkbox' del elemento input y realizar lo siguiente en la función 'buildToDo':
-        a) Crer un checkbox en la función 'buildToDo'
+        a) Crear un checkbox en la función 'buildToDo'
         b) Asignarle como id a dicho checkbox el valor del index y quitar el id del index de toDoText
         c) Agregarle al checkbox el 'click' event listener de completeToDo y quitárle el event listener a toDoText
         d) Asignarle la clase 'completeCheckbox' al checkbox
