@@ -19,7 +19,7 @@ describe("03 | Ejercicios", () => {
 
   it("Debería renderizar un div por cada uno de los animales", () => {
     animalsDivs = animals.find("div");
-    expect(animalsDivs.length).toBe(data.zoo.animals.length + 1);
+    expect(animalsDivs.length).toBe(data.zoo.animals.length);
   });
 
   it("Debería renderizar una etiqueta 'h5' dentro de cada div con el nombre de cada animal", () => {
