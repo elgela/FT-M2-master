@@ -1,53 +1,49 @@
 // Configuramos test
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
-import "jest-styled-components";
 import { shallow, configure } from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
-import styles from "../src/components/Bienvenido/Bienvenido.module.css";
 // Importamos variables/componentes
-import Bienvenido from "../src/components/Bienvenido/Bienvenido.jsx";
-import Botones, {
-  DivButtons,
-  Buttons,
-} from "../src/components/Botones/Botones.jsx";
+import Bienvenido, {
+  studentName,
+  techSkills,
+} from "../src/components/Bienvenido.jsx";
 
 configure({ adapter: new Adapter() });
 
-describe("01 | Componente 'Bienvenido'", () => {
+describe('01 | Componente "Bienvenido"', () => {
   const wrapperBienvenido = shallow(<Bienvenido />);
+  const divBienvenido = wrapperBienvenido.find("div");
 
-  it("Renderiza el componente", () => {
+  it("Renderiza el componente ", () => {
     expect(wrapperBienvenido).toBeTruthy();
   });
 
-  it("La etiqueta div debe contener una clase llamada 'divBienvenido'", () => {
-    const divBienvenido = wrapperBienvenido.find("div");
-    expect(divBienvenido.hasClass(styles.divBienvenido)).toBe(true);
+  it("Debe contener una única etiqueta 'div' que contenga todo lo demás", () => {
+    expect(divBienvenido).toHaveLength(1);
   });
 
-  it("La etiqueta h1 debe contener una clase llamada 'title'", () => {
-    const h1 = wrapperBienvenido.find("h1");
-    expect(h1.hasClass(styles.title)).toBe(true);
+  it("Debe renderizar el tíulo con un tag 'h1'", () => {
+    const h1 = divBienvenido.find("h1");
+    expect(h1.length).toBe(1);
   });
 
-  it("La etiqueta h3 debe contener una clase llamada 'subtitle'", () => {
-    const h3 = wrapperBienvenido.find("h3");
-    expect(h3.hasClass(styles.subtitle)).toBe(true);
+  it("Debe renderizar una etiqueta 'h3' en donde su texto corresponda a la constante 'studentName'", () => {
+    const h3 = divBienvenido.find("h3");
+    expect(h3.length).toBe(1);
+    expect(h3.text()).toBe(studentName);
   });
 
-  it("La etiqueta ul debe contener una clase llamada 'unorderedList'", () => {
-    const ul = wrapperBienvenido.find("ul");
-    expect(ul.hasClass(styles.unorderedList)).toBe(true);
+  it("Debe renderizar una etiqueta 'ul'", () => {
+    const ul = divBienvenido.find("ul");
+    expect(ul.length).toBe(1);
   });
 
-  it("Las etiquetas li debe contener una clase llamada 'listItem'", () => {
-    const ul = wrapperBienvenido.find("ul");
+  it("Debe renderizar una etiqueta li por cada tech skill", () => {
+    const ul = divBienvenido.find("ul");
     const li = ul.find("li");
-    expect(li.at(0).props().className).toBe("listItem");
-    expect(li.at(1).props().className).toBe("listItem");
-    expect(li.at(2).props().className).toBe("listItem");
-    expect(li.at(3).props().className).toBe("listItem");
-    expect(li.at(4).props().className).toBe("listItem");
+    techSkills.length > 5
+      ? expect(li.length).toBe(techSkills.length)
+      : expect(li.length).toBe(5);
   });
 });

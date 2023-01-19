@@ -1,29 +1,13 @@
-import React from 'react'
-import Botones from '../Botones/Botones.jsx'
-import htmlImg from '../../assets/html.png'
-import cssImg from '../../assets/css.svg'
-import javascriptImg from '../../assets/javascript.png'
-import reactImg from '../../assets/react.png'
-import redux from '../../assets/redux.png'
-import styles from './Bienvenido.module.css'
+import React from "react";
 
-const studentName = 'Marcelo'
-const techSkills = [{ tech: 'Html', image: htmlImg }, { tech: 'Css', image: cssImg }, { tech: 'JavaScript', image: javascriptImg }, { tech: 'React', image: reactImg }, { tech: 'Redux', image: redux }]
-const alerts = { m1: 'Aprobado', m2: 'En curso' }
+const studentName = "";
+const techSkills = ["Html", "Css", "JavaScript", "React", "Redux"];
+const alerts = { m1: "Aprobado", m2: "En curso" };
 
-export default function Bienvenido () {
-  return (
-    <div className={styles.divBienvenido}>
-      <h1 className={styles.title} style={{color: 'red'}}>soy Henry!</h1>
-      <h3 className={styles.subtitle}>{studentName}</h3>
-      <ul className={styles.unorderedList}>
-        {techSkills.map(skill => (
-          <li className={styles.listItem} key={skill}></li>
-        ))}
-      </ul>
-      <Botones alerts={alerts} />
-    </div>
-  )
+export default function Bienvenido() {
+  // el código de tu componente acá
+  return;
 }
 
-export { studentName, techSkills, alerts }
+// Esto lo exportamos para los tests
+export { studentName, techSkills, alerts };
