@@ -7,7 +7,7 @@ import characters, { Rick } from './data.js'
 function App () {
   return (
     <div className='App' style={{ padding: '25px' }}>
-      <div>
+      {/* <div>
         <Card
           name={Rick.name}
           species={Rick.species}
@@ -15,7 +15,7 @@ function App () {
           image={Rick.image}
           onClose={() => window.alert('Emulamos que se cierra la card')}
         />
-      </div>
+      </div> */}
       <hr />
       <div>
         <Cards
