@@ -1,3 +1,9 @@
 .App {
    text-align: center;
+   background-image:url("../img/il_fullxfull.1328676951_8uwy.webp");
+   background-size: cover;
+}
+
+.colorLetra {
+   color: rgb(247, 4, 4);
 }
