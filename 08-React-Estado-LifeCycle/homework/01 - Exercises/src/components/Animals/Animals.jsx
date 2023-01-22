@@ -6,6 +6,10 @@ export default class Animals extends React.Component {
   }
 
   render () {
-    return <div></div>
+    return( 
+      <div>
+        <h1>Soy Animals</h1>
+      </div>
+    )
   }
 }
