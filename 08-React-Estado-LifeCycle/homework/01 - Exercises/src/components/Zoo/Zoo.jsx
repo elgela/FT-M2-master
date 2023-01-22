@@ -19,14 +19,13 @@ export default function Zoo() {
          ...zoo,
          zooName: e.target.value,
       })
-   };
-   
+   }
+
    return (
       <div>
-         <label>{'Zoo Name:'}</label>
-         <input  value={zoo.zooName} onChange={handleInputChange}/>
+         <label>zooName</label>
+         <input value={zoo.zooName} onChange={handleInputChange}/>
          <h1>{zoo.zooName}</h1>
       </div>
    );
 }
-
