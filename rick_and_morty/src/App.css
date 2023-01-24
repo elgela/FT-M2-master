@@ -2,8 +2,41 @@
    text-align: center;
    background-image:url("../img/il_fullxfull.1328676951_8uwy.webp");
    background-size: cover;
+   background-position-y: 900px;
 }
 
 .colorLetra {
    color: rgb(247, 4, 4);
+   
+}
+
+.search {
+   border-color: red;
+   border-radius: 9px;
+   padding: 4px;
+   background-color: aquamarine;
+}
+
+.boton {
+   color: aqua;
+   background-color: brown;
+   border-radius: 9px;
+   padding: 6px;
+}
+
+.boton:hover {
+   background-color:blueviolet
+}
+
+.botonCierre {
+   background-color: aqua;
+   border-radius: 9px;
+}
+
+.tarjetas {
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    
 }
