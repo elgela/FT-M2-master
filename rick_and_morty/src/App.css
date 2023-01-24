@@ -7,6 +7,7 @@
 
 .colorLetra {
    color: rgb(247, 4, 4);
+   padding-right: 20px;
    
 }
 
@@ -28,15 +29,19 @@
    background-color:blueviolet
 }
 
-.botonCierre {
-   background-color: aqua;
-   border-radius: 9px;
+.tarjetas {
+    display:flex;
+    justify-content: center;
+    text-align:center;
 }
 
-.tarjetas {
-    display:inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    
+.botonCierre {
+   background-color: aqua;
+   /* border-color: aqua; */
+   border-radius: 5px;
+   color:cornsilk
+}
+
+.botonCierre:hover {
+   background-color: blue;
 }
