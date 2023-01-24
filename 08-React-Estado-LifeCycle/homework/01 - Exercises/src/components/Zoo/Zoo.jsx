@@ -26,7 +26,7 @@ export default function Zoo() {
          })
       )
       .catch((error) => console.log(error));
-   }, [])
+   },[]) 
 
    function handleinputChange(e){
       setZoo({
