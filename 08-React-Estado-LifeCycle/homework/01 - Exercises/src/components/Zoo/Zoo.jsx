@@ -11,11 +11,11 @@ export default function Zoo() {
       zooName: "",
       animals: [],
       species: [],
-      allAnimals: []
+      allAnimals: [],
    });
 
    React.useEffect(() => {
-      fetch('http://localhost:3001/zoo')
+      fetch('http://localhost:3000/zoo')
          .then((res) => res.json())
          .then((data) => 
          setZoo({
@@ -26,6 +26,7 @@ export default function Zoo() {
          })
       )
       .catch((error) => console.log(error));
+      // eslint-disable-next-line
    }, [])
 
    function handleinputChange(e){

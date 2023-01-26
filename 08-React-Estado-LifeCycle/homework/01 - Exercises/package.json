@@ -24,9 +24,9 @@
     "styled-components": "^5.3.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "server": "json-server --watch db.json --port 3000",
-    "build": "react-scripts build",
+    "build": "react-scripts --openssl-legacy-provider build",
     "test": "jest --detectOpenHandles --verbose",
     "test:01": "jest tests/01.test.js",
     "test:02": "jest tests/02.test.js",
