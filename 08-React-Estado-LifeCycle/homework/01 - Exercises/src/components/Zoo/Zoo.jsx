@@ -26,7 +26,6 @@ export default function Zoo() {
          })
       )
       .catch((error) => console.log(error));
-      // eslint-disable-next-line
    }, [])
 
    function handleinputChange(e){

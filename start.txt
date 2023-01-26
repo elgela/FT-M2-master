@@ -1,0 +1,2 @@
+para PC     "start": "react-scripts start",
+para netbook     "start": "react-scripts --openssl-legacy-provider start",
