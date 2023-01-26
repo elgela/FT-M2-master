@@ -15,7 +15,7 @@ export default function Zoo() {
    });
 
    React.useEffect(() => {
-      fetch('http://localhost:3000/zoo')
+      fetch('http://localhost:3001/zoo')
          .then((res) => res.json())
          .then((data) => 
          setZoo({
