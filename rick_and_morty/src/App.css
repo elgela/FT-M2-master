@@ -37,11 +37,17 @@
 
 .botonCierre {
    background-color: aqua;
-   /* border-color: aqua; */
    border-radius: 5px;
    color:cornsilk
 }
 
 .botonCierre:hover {
    background-color: blue;
+}
+
+.barraNav {
+   display: flex;
+   justify-content: right;
+   background-color: rgb(3, 139, 139);
+   padding: 15px;
 }
