@@ -7,6 +7,7 @@ import Promotions from "./components/Promotions/Promotions.jsx";
 import CardDetail from "./components/CardDetail/CardDetail.jsx";
 import { Route, Routes, useLocation, useNavigate, } from "react-router-dom";
 /* eslint-disable */
+import { HashRouter, Route } from "react-router-dom";
 
 export default function App() {
   // useLocation()
